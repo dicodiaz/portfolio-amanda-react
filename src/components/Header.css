@@ -1,0 +1,17 @@
+@media screen and (max-width: 767px) {
+  .navbar-nav {
+    height: calc(100vh - 56px);
+    padding-top: 10px;
+  }
+
+  .navbar-nav a {
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    border-bottom: 1px solid white;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+}

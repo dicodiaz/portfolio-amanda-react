@@ -1,23 +1,50 @@
+import React, { useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import { FaInstagram, FaTiktok } from 'react-icons/fa';
+import './Header.css';
 
-const Header = () => (
-  <header>
-    <Navbar bg="light" expand="md" fixed="top">
-      <Container fluid>
-        <Navbar.Brand>
-          <NavLink to="/">React-Redux Setup</NavLink>
-        </Navbar.Brand>
-        <Navbar.Toggle />
-        <Navbar.Collapse>
-          <Nav className="ms-auto">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/about">About</NavLink>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-  </header>
-);
+const Header = () => {
+  const [open, setOpen] = useState(false);
+
+  const onToggleClick = () => setOpen((prevOpen) => !prevOpen);
+
+  return (
+    <header>
+      <Navbar id="navbar" bg="dark" variant="dark" expand="md" fixed="top" collapseOnSelect>
+        <Container>
+          <Navbar.Brand href="#home" className="fw-bold py-0">
+            Amanda López
+          </Navbar.Brand>
+          <Nav.Link href="https://www.instagram.com/amandapaolopez">
+            <FaInstagram className="fs-5 text-white" />
+          </Nav.Link>
+          <Nav.Link href="https://www.tiktok.com/@amandapaolopez">
+            <FaTiktok className="fs-5 text-white" />
+          </Nav.Link>
+          <Navbar.Toggle className="border-0 fs-5 text-white" onClick={onToggleClick}>
+            {open ? <AiOutlineClose /> : <AiOutlineMenu />}
+          </Navbar.Toggle>
+          <Navbar.Collapse>
+            <Nav className="ms-auto">
+              <Nav.Link href="#about" onClick={onToggleClick}>
+                About me
+              </Nav.Link>
+              <Nav.Link href="#portfolio" onClick={onToggleClick}>
+                Portfolio
+              </Nav.Link>
+              <Nav.Link href="#Commercial" onClick={onToggleClick}>
+                Commercial
+              </Nav.Link>
+              <Nav.Link href="#contact" onClick={onToggleClick}>
+                Contact me
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </header>
+  );
+};
 
 export default Header;
