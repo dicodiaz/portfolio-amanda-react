@@ -5,9 +5,9 @@ import { FaInstagram, FaTiktok } from 'react-icons/fa';
 import './Header.css';
 
 const Header = () => {
-  const [open, setOpen] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
-  const onToggleClick = () => setOpen((prevOpen) => !prevOpen);
+  const onToggleClick = () => setShowMenu((prevShowMenu) => !prevShowMenu);
 
   return (
     <header>
@@ -23,7 +23,7 @@ const Header = () => {
             <FaTiktok className="fs-5 text-white" />
           </Nav.Link>
           <Navbar.Toggle className="border-0 fs-5 text-white" onClick={onToggleClick}>
-            {open ? <AiOutlineClose /> : <AiOutlineMenu />}
+            {showMenu ? <AiOutlineClose /> : <AiOutlineMenu />}
           </Navbar.Toggle>
           <Navbar.Collapse>
             <Nav className="ms-auto">

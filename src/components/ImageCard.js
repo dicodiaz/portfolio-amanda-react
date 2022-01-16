@@ -21,19 +21,21 @@ class ImageCard extends React.Component {
   }
 
   render() {
-    const { image } = this.props;
+    const { id, src, alt } = this.props;
     const { spans } = this.state;
 
     return (
-      <div style={{ gridRowEnd: `span ${spans}` }}>
-        <img ref={this.imageRef} src={image} alt={image} />
+      <div id={id} style={{ gridRowEnd: `span ${spans}` }}>
+        <img ref={this.imageRef} src={src} alt={alt} />
       </div>
     );
   }
 }
 
 ImageCard.propTypes = {
-  image: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
 };
 
 export default ImageCard;
