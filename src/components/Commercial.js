@@ -26,6 +26,9 @@ const Commercial = () => {
   return (
     <Container as="section" id="commercial" className="py-5" fluid>
       <Row className="mx-0 g-0 justify-content-center">
+        <h2 className="py-5 display-6 text-center">
+          <span className="py-2 border-bottom border-dark">Commercial</span>
+        </h2>
         <Col sm={10} md={9} lg={8} xl={7} ref={iFrameRef}>
           <Carousel interval={null}>
             {videos.map((video) => {

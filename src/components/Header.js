@@ -33,7 +33,7 @@ const Header = () => {
               <Nav.Link href="#portfolio" onClick={onToggleClick}>
                 Portfolio
               </Nav.Link>
-              <Nav.Link href="#Commercial" onClick={onToggleClick}>
+              <Nav.Link href="#commercial" onClick={onToggleClick}>
                 Commercial
               </Nav.Link>
               <Nav.Link href="#contact" onClick={onToggleClick}>
