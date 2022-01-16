@@ -18,27 +18,15 @@ const ImageList = ({ images }) => {
         {images
           .sort((a, b) => extractNumber(a) - extractNumber(b))
           .slice(0, numberOfItems)
-          .map((image, i) => {
+          .map((image) => {
             const imageNumber = extractNumber(image);
 
-            return (
-              <ImageCard
-                id={i === 10 ? 'photo-11' : ''}
-                key={imageNumber}
-                src={image}
-                alt={`photo-${imageNumber}`}
-              />
-            );
+            return <ImageCard key={imageNumber} src={image} alt={`photo-${imageNumber}`} />;
           })}
       </div>
       <Row xs={1} className="mx-0 mt-3 g-0 justify-content-center ">
         <Col xs="auto">
-          <Button
-            as="a"
-            href={showMore ? '#photo-11' : '#portfolio'}
-            variant={showMore ? 'outline-danger' : 'outline-info'}
-            onClick={onButtonClick}
-          >
+          <Button variant={showMore ? 'outline-danger' : 'outline-info'} onClick={onButtonClick}>
             {showMore ? 'Show less' : `Show ${images.length - numberOfItems} more`}
           </Button>
         </Col>
